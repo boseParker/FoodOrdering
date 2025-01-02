@@ -1,0 +1,79 @@
+.navbar{
+    padding: 20px 0px;
+}
+.navbar .logo{
+    width: 150px;
+}
+.navbar-menu{ 
+    padding-top: 20px;
+    list-style: none;
+    color: #495678;
+    font-size: 18px;
+}
+
+.navbar button{
+    background-color: transparent;
+    font-size: 18px;
+    padding: 10px 30px;
+    color:#495678;
+    border: 1px solid orangered;
+    border-radius: 50px;
+    cursor: pointer;
+}
+.navbar button:hover{
+    background-color: #fff4f2;
+}
+.navbar .active{
+    padding-bottom: 2px;
+    border-bottom: 2px solid black;
+}
+.navbar li{
+    cursor: pointer;
+}
+.navbar-search-section{
+    position: relative;
+}
+.navbar-search-section .dot{
+    position: absolute;
+    min-width: 10px;
+    min-height: 10px;
+    background-color: tomato;
+    border-radius: 5px;
+    top:-8px;
+    right: -8px;
+}
+
+@media (max-width:1050px) {
+    .navbar .logo{
+        width: 140px;
+    }
+    .navbar-menu{
+        font-size: 17px;
+    }
+    .navbar-right img{
+        width: 22px;
+    }
+    .navbar-right button{
+        padding: 8px 25px;
+    }
+}
+@media (max-width:769px) {
+    .navbar .logo{
+        width: 120px;
+    }
+    .navbar-right button{
+        font-size: 13px;
+    }
+}
+@media (min-width:300px) and (max-width:426px) {
+    .navbar .logo{
+        width: 70px;
+    }
+   
+    .navbar-right img{
+        width: 18px;
+    }
+    .navbar-right button{
+        padding: 4px 15px;
+    }
+}

@@ -1,0 +1,8 @@
+.explore-menu-list::-webkit-scrollbar{
+    display: none;
+}
+.explore-menu-list .active{
+    border: 5px solid orange;
+    padding: 2px;
+
+}
