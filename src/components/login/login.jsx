@@ -22,7 +22,7 @@ const Login = ({ setShowLogin }) => {
       : { username: formData.username, email: formData.email, password: formData.password };
 
     try {
-      const res = await fetch(`http://127.0.0.1:8000/api/${endpoint}/`, {
+      const res = await fetch(`https://brutus-food-backend.onrender.com/api/${endpoint}/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -36,9 +36,11 @@ const Login = ({ setShowLogin }) => {
         if (currentState === "login") {
           localStorage.setItem("access_token", data.access);
           localStorage.setItem("refresh_token", data.refresh);
+         
           alert("Logged in successfully!");
+          navigate("/");
           setShowLogin(false);
-          navigate("/"); // Change this to your actual route
+          // Change this to your actual route
         } else {
           alert("Account created successfully!");
           setCurrentState("login");

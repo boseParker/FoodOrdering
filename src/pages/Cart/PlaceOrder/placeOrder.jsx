@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import './placeorder.css'
-import { StoreContext } from '../../../../context/storeContext'
+import { StoreContext } from '../../../context/storeContext'
 import { useNavigate } from 'react-router-dom'
 const PlaceOrder = () => {
 
@@ -29,7 +29,7 @@ const PlaceOrder = () => {
     const refreshToken = getRefreshToken()
     if (!refreshToken) throw new Error("No refresh token available")
 
-    const res = await fetch('http://127.0.0.1:8000/api/token/refresh/', {
+    const res = await fetch('https://brutus-food-backend.onrender.com/api/token/refresh/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ refresh: refreshToken })
@@ -70,7 +70,7 @@ const PlaceOrder = () => {
   useEffect(() => {
     const fetchAddress = async () => {
       try {
-        const res = await fetchWithAuth('http://127.0.0.1:8000/api/address/', { method: 'GET' })
+        const res = await fetchWithAuth('https://brutus-food-backend.onrender.com/api/address/', { method: 'GET' })
         if (res.ok) {
           const data = await res.json()
           setAddress(data)
@@ -89,7 +89,7 @@ const PlaceOrder = () => {
   const handleSave = async (e) => {
     e.preventDefault()
     try {
-      const res = await fetchWithAuth('http://127.0.0.1:8000/api/address/', {
+      const res = await fetchWithAuth('https://brutus-food-backend.onrender.com/api/address/', {
         method: 'POST',
         body: JSON.stringify(address)
       })
@@ -102,6 +102,7 @@ const PlaceOrder = () => {
 
   const handlePaymentClick = () => {
     setShowPayment(true)
+
   }
 
   // Prepare order data with flattened address and cart items array
@@ -144,14 +145,14 @@ const PlaceOrder = () => {
     const orderData = prepareOrderData()
 
     try {
-      const res = await fetchWithAuth('http://127.0.0.1:8000/api/orders/', {
+      const res = await fetchWithAuth('https://brutus-food-backend.onrender.com/api/orders/', {
         method: 'POST',
         body: JSON.stringify(orderData)
       })
 
       if (res.ok) {
         alert("Order placed successfully. Confirmation email was sent.")
-        navigate('/')
+        navigate('/my-orders')
         
       } else {
         const errData = await res.json()

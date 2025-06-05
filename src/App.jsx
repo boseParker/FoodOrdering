@@ -2,11 +2,12 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/navbar/navbar';
 import Home from './pages/home/home';
-import Cart from './pages/home/Cart/cart';
-import PlaceOrder from './pages/home/Cart/PlaceOrder/placeOrder';
+import Cart from './pages/Cart/cart';
+import PlaceOrder from './pages/Cart/PlaceOrder/placeOrder';
 import Footer from './components/footer/footer';
 import { useState, useEffect } from 'react';
 import Login from './components/login/login';
+import MyOrders from './pages/my-orders/My-Orders';
 
 function App() {
   const [showLogin, setShowLogin] = useState(false);
@@ -38,6 +39,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/cart' element={<Cart />} />
           <Route path='/order' element={<PlaceOrder />} />
+          <Route path='/my-orders' element={<MyOrders/>}/>
         </Routes>
       </div>
 
