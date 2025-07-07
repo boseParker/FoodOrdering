@@ -13,7 +13,7 @@ const MyOrders = () => {
       }
 
       try {
-        const res = await fetch("https://brutus-food-backend.onrender.com/api/my-orders/", {
+        const res = await fetch("https://brutus-food-backend.onrender.com/api/orders/", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
