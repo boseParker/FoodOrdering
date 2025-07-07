@@ -3,7 +3,7 @@ import './App.css';
 import Navbar from './components/navbar/navbar';
 import Home from './pages/home/home';
 import Cart from './pages/Cart/cart';
-import PlaceOrder from './pages/Cart/PlaceOrder/placeOrder';
+import PlaceOrder from './pages/PlaceOrder/placeOrder';
 import Footer from './components/footer/footer';
 import { useState, useEffect } from 'react';
 import Login from './components/login/login';
